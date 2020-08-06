@@ -92,7 +92,9 @@ if __name__ == "__main__":
     for p in find_password_iter():
         console.control("\r\033[K")
         console.print(f"[red]{p}[/]", end="")
+    console.control("\r\033[K")
     if check_password_vulnerable(p):
-        console.control("\r\033[K")
         console.print(f"[green]{p}[/]")
+    else:
+        console.print(f"[red]Not found[/]")
     console.show_cursor(True)

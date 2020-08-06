@@ -6,6 +6,8 @@ characters = ascii_letters + digits
 CORRECT_PASSWORD = "".join(choices(characters, k=randint(10, 15)))
 LENGTH = len(CORRECT_PASSWORD)
 
+assert all(c in characters for c in CORRECT_PASSWORD)
+
 
 def check_password_vulnerable(password: str) -> bool:
     """
