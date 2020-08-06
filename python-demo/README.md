@@ -6,6 +6,8 @@ This program demonstrates a simple side channel attack on a password validator f
 $ python attack.py
 ```
 
+![Attacking demo](demo.gif)
+
 ## How it works
 
 By looking at the password validator (in `check.py`), it is clear that a correct password takes longer to check than an incorrect one. That is because the checker short circuits once it knows that the passwords can't match. Thus, the attacker is able to time the execution time of the checker and find a correct password.
